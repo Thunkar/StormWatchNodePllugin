@@ -3,7 +3,7 @@ Node.js StormWatch plugin.
 
 ## Installation
 
-`npm install stormwatch --save'
+`npm install stormwatch --save`
 
 ## Usage
 
