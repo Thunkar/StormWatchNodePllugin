@@ -1,5 +1,5 @@
-﻿# StormWatchNodePlugin
-Node.js StormWatch plugin. 
+# StormWatchNodePlugin
+Node.js StormWatch plugin. [![Build Status](https://travis-ci.org/Thunkar/StormWatchNodePlugin.svg?branch=master)](https://travis-ci.org/Thunkar/StormWatchNodePlugin)
 
 ## Installation
 
