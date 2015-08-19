@@ -1,2 +1,2 @@
-# StormWatchNodePllugin
+# StormWatchNodePlugin
 Node.js StormWatch plugin. 
