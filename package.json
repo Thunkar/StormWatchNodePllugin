@@ -1,6 +1,6 @@
 {
   "name": "stormwatch",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "StormWatch server plugin. Responsible for the handshake with the server and the heartbeats that mark the service as online.",
   "main": "stormwatch.js",
   "author": {

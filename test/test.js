@@ -6,7 +6,8 @@ var chai = require('chai'),
 describe('StormWatch server plugin tests', function () {
     
     var stormWatchClient = stormWatch("euw", "Y5B1f5YARV1MvFzRNapcjGtZqOVbnqpDdbVLO0o3", 1000, "Test");
-
+    var badStormWatchClient = stormWatch("undefined", "apikey", 1000, "Test");
+    
     it('handshakes', function (done) {
         expect(stormWatchClient.serviceName()).not.to.be.undefined;
         expect(stormWatchClient.location()).not.to.be.undefined;
@@ -24,6 +25,12 @@ describe('StormWatch server plugin tests', function () {
             if (err) return done(err);
             expect(err).to.be.null;
             expect(body).to.equal("ACK");
+            done();
+        });
+    });
+    it('doesn\'t handshake', function (done) {
+        badStormWatchClient.handshake(function (err, body) {
+            expect(err).not.to.be.null;
             done();
         });
     });

@@ -9,8 +9,7 @@ var StormWatchClient = function (location, apiKey, pingInterval, serviceName) {
         _apiKey = apiKey,
         _serviceName = serviceName,
         _serverAddress = "http://stormwatch.cloudapp.net/api/euw/",
-        _id = "",
-        _failedHeartbeats = 0;
+        _id = "";
     
     return {
         
@@ -67,13 +66,10 @@ var StormWatchClient = function (location, apiKey, pingInterval, serviceName) {
                 timeout: _pingInterval * 2,
             }, function (err, response, body) {
                 if (err) {
-                    _failedHeartbeats++;
                     return callback(err)
                 }
                 else if (response.statusCode != 200) {
-                    if (++_failedHeartbeats > 10) {
-                        return callback(new Error("Server responded with non-200 code: " + response.statusCode), body);
-                    }
+                    return callback(new Error("Server responded with non-200 code: " + response.statusCode), body);
                 }
                 else {
                     return callback(err, body);
