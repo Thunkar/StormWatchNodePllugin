@@ -33,6 +33,7 @@ var StormWatchClient = function (location, apiKey, pingInterval, serviceName) {
                     'name': _serviceName,
                     'accept': '*/*'
                 },
+                timeout: _pingInterval*2,
                 json: { name: _serviceName }
             }, function (err, response, body) {
                 if (err) {
@@ -62,7 +63,8 @@ var StormWatchClient = function (location, apiKey, pingInterval, serviceName) {
                     'name': _serviceName,
                     'accept': '*/*'
                 },
-                json: { id: _id, pingInterval: pingInterval }
+                json: { id: _id, pingInterval: pingInterval },
+                timeout: 5000,
             }, function (err, response, body) {
                 if (err) {
                     _failedHeartbeats++;
