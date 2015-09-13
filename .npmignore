@@ -1,1 +1,6 @@
 /test
+/obj
+/bin
+.ntvs_analysis.dat
+.travis.yml
+StormWatchPlugin.njsproj
