@@ -8,7 +8,7 @@ var StormWatchClient = function (location, apiKey, pingInterval, serviceName) {
         _pingInterval = pingInterval,
         _apiKey = apiKey,
         _serviceName = serviceName,
-        _serverAddress = "http://stormwatch.cloudapp.net/api/euw/",
+        _serverAddress = "http://stormwatch.cloudapp.net/api/",
         _id = "";
     
     return {
@@ -63,7 +63,7 @@ var StormWatchClient = function (location, apiKey, pingInterval, serviceName) {
                     'accept': '*/*'
                 },
                 json: { id: _id, pingInterval: pingInterval },
-                timeout: _pingInterval * 2,
+                timeout: _pingInterval * 4,
             }, function (err, response, body) {
                 if (err) {
                     return callback(err)
